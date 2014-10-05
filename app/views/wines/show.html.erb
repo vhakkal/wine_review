@@ -15,9 +15,17 @@
 	<p>
 		<label><b><i>Varietal:</i></b></label><%= @wine.varietal %>
 	</p>
-
+	<p>
+		<label>Average Log Entries:</label> <%= format_average_rating(@wine) %>
+	</p>
 </article> 
 <%=link_to'All Wines', wines_path%> | <%= link_to 'Edit', edit_wine_path(@wine) %>
 <%= button_to 'Delete', @wine, method: :delete, data: {confirm:'Are you sure?'} %>
 
+
+<p>
+
+	Read all
+	<%= link_to pluralize(@wine.log_entries.size, 'Log Entries'), wine_log_entries_path(@wine) %>
+</p>
 
