@@ -7,6 +7,7 @@
 	<%= f.label :varietal %> <%= f.select :varietal, Wine::VARIETALS, { prompt: "Pick one" } %><br/>
 	<p>
 		<%= f.submit %>
-		<%= link_to'Cancel', wines_path %>
+		<%= link_to "<button>Cancel</button>".html_safe, wines_path, :id => "button_id", :class => "button_class" %>
+
 	</p>
 <% end %>
